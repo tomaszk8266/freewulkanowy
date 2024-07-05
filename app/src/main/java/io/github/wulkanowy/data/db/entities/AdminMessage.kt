@@ -42,8 +42,8 @@ data class AdminMessage(
     val types: List<MessageType> = emptyList(),
 
     @ColumnInfo(name = "is_ok_visible", defaultValue = "0")
-    val isOkVisible: Boolean = false,
+    var isOkVisible: Boolean = false,
 
     @ColumnInfo(name = "is_x_visible", defaultValue = "0")
-    val isXVisible: Boolean = false
+    var isXVisible: Boolean = false
 )

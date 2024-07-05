@@ -2,7 +2,6 @@ package io.github.wulkanowy.ui.modules.login
 
 import io.github.wulkanowy.data.repositories.StudentRepository
 import io.github.wulkanowy.data.repositories.WulkanowyRepository
-import io.github.wulkanowy.data.repositories.isEndDateReached
 import io.github.wulkanowy.services.sync.SyncManager
 import io.github.wulkanowy.ui.base.BasePresenter
 import io.github.wulkanowy.ui.base.ErrorHandler
@@ -27,13 +26,6 @@ class LoginPresenter @Inject constructor(
         presenterScope.launch {
             runCatching { wulkanowyRepository.fetchMapping() }
                 .onFailure { Timber.e(it) }
-        }
-    }
-
-    fun checkIfEnd() {
-        if (isEndDateReached) {
-            syncManager.stopSyncWorker()
-            view?.navigateToEnd()
         }
     }
 }

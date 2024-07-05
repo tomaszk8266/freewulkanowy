@@ -19,7 +19,6 @@ import androidx.work.WorkManager
 import io.github.wulkanowy.data.db.SharedPrefProvider
 import io.github.wulkanowy.data.db.SharedPrefProvider.Companion.APP_VERSION_CODE_KEY
 import io.github.wulkanowy.data.repositories.PreferencesRepository
-import io.github.wulkanowy.data.repositories.isEndDateReached
 import io.github.wulkanowy.services.sync.channels.Channel
 import io.github.wulkanowy.utils.AppInfo
 import io.github.wulkanowy.utils.isHolidays
@@ -42,7 +41,7 @@ class SyncManager @Inject constructor(
 ) {
 
     init {
-        if (now().isHolidays || isEndDateReached) {
+        if (now().isHolidays) {
             stopSyncWorker()
         }
 
@@ -60,7 +59,7 @@ class SyncManager @Inject constructor(
     }
 
     fun startPeriodicSyncWorker(restart: Boolean = false) {
-        if (preferencesRepository.isServiceEnabled && !now().isHolidays && isEndDateReached) {
+        if (preferencesRepository.isServiceEnabled && !now().isHolidays) {
             val serviceInterval = preferencesRepository.servicesInterval
 
             workManager.enqueueUniquePeriodicWork(
@@ -80,10 +79,6 @@ class SyncManager @Inject constructor(
 
     // if quiet, no notifications will be sent
     fun startOneTimeSyncWorker(quiet: Boolean = false): Flow<WorkInfo?> {
-        if (isEndDateReached) {
-            return flowOf(null)
-        }
-
         val work = OneTimeWorkRequestBuilder<SyncWorker>()
             .setInputData(
                 Data.Builder()

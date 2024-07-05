@@ -16,9 +16,6 @@ import java.time.LocalDate
 import javax.inject.Inject
 import javax.inject.Singleton
 
-private val endDate = LocalDate.of(2024, 6, 25)
-val isEndDateReached = LocalDate.now() >= endDate
-
 @Singleton
 class WulkanowyRepository @Inject constructor(
     private val wulkanowyService: WulkanowyService,
