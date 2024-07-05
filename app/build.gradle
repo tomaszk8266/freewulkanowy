@@ -8,7 +8,7 @@ apply plugin: 'kotlin-parcelize'
 apply plugin: 'com.google.devtools.ksp'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.crashlytics'
+//apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'com.github.triplet.play'
 apply plugin: 'ru.cian.huawei-publish'
 apply plugin: 'com.mikepenz.aboutlibraries.plugin'
@@ -254,7 +254,7 @@ dependencies {
     playImplementation platform('com.google.firebase:firebase-bom:33.0.0')
     playImplementation 'com.google.firebase:firebase-analytics'
     playImplementation 'com.google.firebase:firebase-messaging'
-    playImplementation 'com.google.firebase:firebase-crashlytics:'
+//    playImplementation 'com.google.firebase:firebase-crashlytics:'
     playImplementation 'com.google.firebase:firebase-config'
 
     playImplementation 'com.google.android.gms:play-services-ads:22.6.0'
