@@ -7,6 +7,10 @@
 
 Nieoficjalny klient dziennika VULCAN UONET+ dla ucznia i rodzica
 
+##
+Aplikacja jest hobbystycznie tworzona przez uczniów, dla uczniów i rodziców. Nie mamy nic wspólnego z firmą Vulcan. Oficjalną aplikację możesz znaleźć pod nazwą [Dzienniczek VULCAN](https://play.google.com/store/apps/details?id=pl.edu.vulcan.hebe) w sklepie Google Play.
+##
+
 ## Funkcje
 
 -   logowanie za pomocą e-maila i hasła
