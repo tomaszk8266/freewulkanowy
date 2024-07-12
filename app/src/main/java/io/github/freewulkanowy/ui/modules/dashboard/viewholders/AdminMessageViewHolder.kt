@@ -19,8 +19,6 @@ class AdminMessageViewHolder(
     fun bind(item: AdminMessage?, showPanicButton: Boolean = false) {
         item ?: return
 
-        item.isOkVisible = true
-
         val context = binding.root.context
         val (backgroundColor, textColor) = when (item.priority) {
             "HIGH" -> {
