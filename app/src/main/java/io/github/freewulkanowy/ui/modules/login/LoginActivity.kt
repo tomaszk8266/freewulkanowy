@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
 import androidx.fragment.app.commit
+import androidx.preference.PreferenceManager
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.freewulkanowy.R
 import io.github.freewulkanowy.data.pojos.RegisterUser
@@ -22,6 +23,7 @@ import io.github.freewulkanowy.ui.modules.login.studentselect.LoginStudentSelect
 import io.github.freewulkanowy.ui.modules.login.symbol.LoginSymbolFragment
 import io.github.freewulkanowy.ui.modules.main.MainActivity
 import io.github.freewulkanowy.ui.modules.notifications.NotificationsFragment
+import io.github.freewulkanowy.ui.modules.onboarding.OnboardingActivity
 import io.github.freewulkanowy.utils.AppInfo
 import io.github.freewulkanowy.utils.InAppUpdateHelper
 import javax.inject.Inject
@@ -48,6 +50,15 @@ class LoginActivity : BaseActivity<LoginPresenter, ActivityLoginBinding>(), Logi
         setSupportActionBar(binding.loginToolbar)
         messageContainer = binding.loginContainer
         inAppUpdateHelper.messageContainer = binding.loginContainer
+
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val hasCompletedOnboarding = prefs.getBoolean("completedOnboarding", false)
+
+        if (!hasCompletedOnboarding) {
+            val onboardingIntent = Intent(this, OnboardingActivity::class.java)
+            startActivity(onboardingIntent)
+            finish()
+        }
 
         presenter.onAttachView(this)
         inAppUpdateHelper.checkAndInstallUpdates()
