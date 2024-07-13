@@ -30,7 +30,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:text="@string/onboarding_1_title"
+            android:text="@string/onboarding_warning_title"
             android:textSize="28sp"
             app:layout_constraintBottom_toTopOf="@id/onboarding1Description"
             app:layout_constraintTop_toBottomOf="@id/onboardingIcon" />
@@ -46,7 +46,7 @@
             app:layout_constraintBottom_toTopOf="@id/onboardingNextBtn"
             app:layout_constraintTop_toBottomOf="@id/onboarding1Text"
             tools:maxLines="15"
-            android:text="@string/onboarding_1_message" />
+            android:text="@string/onboarding_warning_message" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/onboardingBackBtn"
