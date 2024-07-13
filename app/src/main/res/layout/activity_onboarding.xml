@@ -9,6 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        tools:layout="@layout/fragment_onboarding_1" />
+        tools:layout="@layout/fragment_onboarding_warning" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -850,6 +850,7 @@
     <string name="update_download_success_button">Restart</string>
     <string name="update_failed">Update failed! Wulkanowy may not function properly. Consider updating</string>
 
+
     <!--Menu order-->
     <string name="menu_order_confirm_title">Application restart</string>
     <string name="menu_order_confirm_content">The application must restart for the changes to be saved</string>
@@ -872,6 +873,7 @@
     <string name="captcha_dialog_description"><b>Why am I seeing this?</b>\nThe register website from which Wulkanowy downloads data displays the same screen as above, so Wulkanowy must also show it to be able to download data from this website. There\'s no way around it</string>
     <string name="captcha_verified_message">Verified successfully</string>
 
+
     <!--Panic mode-->
     <string name="panic_mode_title">Emergency access</string>
 
@@ -893,17 +895,20 @@
     <string name="error_feature_not_available">Feature not available. Login in a mode other than Mobile API</string>
     <string name="error_field_required">This field is required</string>
 
+
     <!-- Mute system -->
     <string name="message_mute">Mute</string>
     <string name="message_unmute">Unmute</string>
     <string name="message_mute_success">You have muted this user</string>
     <string name="message_unmute_success">You have unmuted this user</string>
-    <!-- Onboarding -->
-    <string name="onboarding_1_title">Uwaga!</string>
-    <string name="onboarding_1_message">Korzystasz właśnie z Wolnej wersji Wulkanowego, NIEOFICJALNEGO klienta dla dziennika elektronicznego firmy Vulcan. Aplikacja jest hobbystycznie tworzona przez uczniów, dla uczniów i rodziców. Nie mamy nic wspólnego z firmą Vulcan. Oficjalną aplikację możesz znaleźć pod nazwą Dzienniczek VULCAN w sklepie Google Play.</string>
-    <string name="onboarding_next_btn">Dalej</string>
 
-    <string name="onboarding_2_message">Witaj w Wolnej wersji Wulkanowego! Aplikacja, którą właśnie pobrałeś/aś jest kontynuacją Wulkanowego, nieoficjalnej apki do dziennika elektronicznego firmy Vulcan. Aplikacja jest tworzona przez uczniów, ma otwarty kod źródłowy - jeżeli znasz się na programowaniu to możesz dodać swoją cegiełkę do rozwoju aplikacji, do czego gorąco zachęcamy! Miłego korzystania z apki!</string>
-    <string name="onboarding_2_title">Witaj w Wolnym Wulkanowym!</string>
-    <string name="onboarding_close_btn">Otwórz aplikację</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_warning_title">Uwaga!</string>
+    <string name="onboarding_warning_message">Korzystasz właśnie z Wolnej wersji Wulkanowego, NIEOFICJALNEGO klienta dla dziennika elektronicznego firmy Vulcan. Aplikacja jest hobbystycznie tworzona przez uczniów, dla uczniów i rodziców. Nie mamy nic wspólnego z firmą Vulcan. Oficjalną aplikację możesz znaleźć pod nazwą Dzienniczek VULCAN w sklepie Google Play.</string>
+    <string name="onboarding_next_btn">Next</string>
+
+    <string name="onboarding_welcome_title">Witaj w Wolnym Wulkanowym!</string>
+    <string name="onboarding_welcome_message">Witaj w Wolnej wersji Wulkanowego! Aplikacja, którą właśnie pobrałeś/aś jest kontynuacją Wulkanowego, nieoficjalnej apki do dziennika elektronicznego firmy Vulcan. Aplikacja jest tworzona przez uczniów, ma otwarty kod źródłowy - jeżeli znasz się na programowaniu to możesz dodać swoją cegiełkę do rozwoju aplikacji, do czego gorąco zachęcamy! Miłego korzystania z apki!</string>
+    <string name="onboarding_back_btn">Back</string>
 </resources>

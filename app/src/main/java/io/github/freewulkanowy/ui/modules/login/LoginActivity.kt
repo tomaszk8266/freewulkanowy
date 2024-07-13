@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
 import androidx.fragment.app.commit
 import androidx.preference.PreferenceManager
@@ -18,12 +19,13 @@ import io.github.freewulkanowy.databinding.ActivityLoginBinding
 import io.github.freewulkanowy.ui.base.BaseActivity
 import io.github.freewulkanowy.ui.modules.login.advanced.LoginAdvancedFragment
 import io.github.freewulkanowy.ui.modules.login.form.LoginFormFragment
+import io.github.freewulkanowy.ui.modules.login.onboarding.LoginOnboardingWarningFragment
+import io.github.freewulkanowy.ui.modules.login.onboarding.LoginOnboardingWelcomeFragment
 import io.github.freewulkanowy.ui.modules.login.recover.LoginRecoverFragment
 import io.github.freewulkanowy.ui.modules.login.studentselect.LoginStudentSelectFragment
 import io.github.freewulkanowy.ui.modules.login.symbol.LoginSymbolFragment
 import io.github.freewulkanowy.ui.modules.main.MainActivity
 import io.github.freewulkanowy.ui.modules.notifications.NotificationsFragment
-import io.github.freewulkanowy.ui.modules.onboarding.OnboardingActivity
 import io.github.freewulkanowy.utils.AppInfo
 import io.github.freewulkanowy.utils.InAppUpdateHelper
 import javax.inject.Inject
@@ -54,17 +56,13 @@ class LoginActivity : BaseActivity<LoginPresenter, ActivityLoginBinding>(), Logi
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         val hasCompletedOnboarding = prefs.getBoolean("completedOnboarding", false)
 
-        if (!hasCompletedOnboarding) {
-            val onboardingIntent = Intent(this, OnboardingActivity::class.java)
-            startActivity(onboardingIntent)
-            finish()
-        }
-
         presenter.onAttachView(this)
         inAppUpdateHelper.checkAndInstallUpdates()
 
-        if (savedInstanceState == null) {
-            openFragment(LoginFormFragment.newInstance(), clearBackStack = true)
+        if (!hasCompletedOnboarding) {
+            openFragment(LoginOnboardingWarningFragment.newInstance(), clearBackStack = true)
+        } else if (savedInstanceState == null) {
+            navigateToLoginForm()
         }
     }
 
@@ -82,6 +80,14 @@ class LoginActivity : BaseActivity<LoginPresenter, ActivityLoginBinding>(), Logi
 
     fun showActionBar(show: Boolean) {
         supportActionBar?.run { if (show) show() else hide() }
+    }
+
+    fun navigateToOnboardingWelcomeFragment() {
+        openFragment(LoginOnboardingWelcomeFragment.newInstance())
+    }
+
+    fun navigateToLoginForm() {
+        openFragment(LoginFormFragment.newInstance(), clearBackStack = true)
     }
 
     fun navigateToSymbolFragment(loginData: LoginData) {
@@ -117,7 +123,11 @@ class LoginActivity : BaseActivity<LoginPresenter, ActivityLoginBinding>(), Logi
     }
 
     private fun openFragment(fragment: Fragment, clearBackStack: Boolean = false) {
-        supportFragmentManager.popBackStack(fragment::class.java.name, POP_BACK_STACK_INCLUSIVE)
+        if (clearBackStack) {
+            supportFragmentManager.popBackStack(null, POP_BACK_STACK_INCLUSIVE)
+        } else {
+            supportFragmentManager.popBackStack(fragment::class.java.name, POP_BACK_STACK_INCLUSIVE)
+        }
 
         supportFragmentManager.commit {
             replace(R.id.loginContainer, fragment)

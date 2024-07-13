@@ -59,12 +59,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.modules.onboarding.OnboardingActivity"
-            android:exported="true"
-            android:configChanges="orientation|screenSize"
-            android:label="@string/login_title"
-            android:theme="@style/WulkanowyTheme.Login"
-            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.modules.login.LoginActivity"
             android:configChanges="orientation|screenSize"

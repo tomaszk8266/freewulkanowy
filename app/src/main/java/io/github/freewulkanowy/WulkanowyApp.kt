@@ -5,7 +5,6 @@ import android.util.Log.DEBUG
 import android.util.Log.INFO
 import android.util.Log.VERBOSE
 import androidx.hilt.work.HiltWorkerFactory
-import androidx.preference.PreferenceManager
 import androidx.work.Configuration
 import com.yariksoffice.lingver.Lingver
 import dagger.hilt.android.HiltAndroidApp
