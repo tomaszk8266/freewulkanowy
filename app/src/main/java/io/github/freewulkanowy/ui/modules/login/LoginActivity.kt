@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
 import androidx.fragment.app.commit
 import androidx.preference.PreferenceManager
@@ -122,7 +123,11 @@ class LoginActivity : BaseActivity<LoginPresenter, ActivityLoginBinding>(), Logi
     }
 
     private fun openFragment(fragment: Fragment, clearBackStack: Boolean = false) {
-        supportFragmentManager.popBackStack(fragment::class.java.name, POP_BACK_STACK_INCLUSIVE)
+        if (clearBackStack) {
+            supportFragmentManager.popBackStack(null, POP_BACK_STACK_INCLUSIVE)
+        } else {
+            supportFragmentManager.popBackStack(fragment::class.java.name, POP_BACK_STACK_INCLUSIVE)
+        }
 
         supportFragmentManager.commit {
             replace(R.id.loginContainer, fragment)

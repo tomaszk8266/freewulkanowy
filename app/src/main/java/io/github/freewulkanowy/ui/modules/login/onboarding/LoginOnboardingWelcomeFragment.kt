@@ -35,6 +35,10 @@ class LoginOnboardingWelcomeFragment : BaseFragment<FragmentOnboardingWelcomeBin
 
             (requireActivity() as LoginActivity).navigateToLoginForm()
         }
+
+        binding.onboardingBackBtn.setOnClickListener {
+            (requireActivity() as LoginActivity).onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     override fun initView() {
