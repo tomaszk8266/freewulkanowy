@@ -14,9 +14,8 @@
             android:id="@+id/onboardingIcon"
             android:layout_width="96dp"
             android:layout_height="96dp"
-            android:layout_marginTop="32dp"
             android:src="@mipmap/ic_launcher"
-            app:layout_constraintBottom_toTopOf="@id/onboarding1Text"
+            app:layout_constraintBottom_toTopOf="@id/onboardingText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -24,20 +23,20 @@
             app:srcCompat="@drawable/ic_launcher_foreground_mono" />
 
         <TextView
-            android:id="@+id/onboarding1Text"
+            android:id="@+id/onboardingText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
             android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:text="@string/onboarding_1_title"
+            android:text="@string/onboarding_2_title"
             android:textSize="28sp"
-            app:layout_constraintBottom_toTopOf="@id/onboarding1Description"
+            app:layout_constraintBottom_toTopOf="@id/onboardingDescription"
             app:layout_constraintTop_toBottomOf="@id/onboardingIcon" />
 
         <TextView
-            android:id="@+id/onboarding1Description"
+            android:id="@+id/onboardingDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
@@ -45,22 +44,21 @@
             android:gravity="center"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@id/onboardingNextBtn"
-            app:layout_constraintTop_toBottomOf="@id/onboarding1Text"
+            app:layout_constraintTop_toBottomOf="@id/onboardingText"
             tools:maxLines="15"
-            android:text="@string/onboarding_1_message" />
+            android:text="@string/onboarding_2_message" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/onboardingNextBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:textSize="16sp"
-            android:text="@string/onboarding_next_btn"
+            android:text="@string/main_log_in"
+            app:icon="@drawable/ic_arrow_right"
+            app:iconGravity="end"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

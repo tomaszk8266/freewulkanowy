@@ -34,7 +34,6 @@ import io.github.freewulkanowy.ui.modules.Destination
 import io.github.freewulkanowy.ui.modules.account.accountquick.AccountQuickDialog
 import io.github.freewulkanowy.ui.modules.auth.AuthDialog
 import io.github.freewulkanowy.ui.modules.captcha.CaptchaDialog
-import io.github.freewulkanowy.ui.modules.onboarding.OnboardingActivity
 import io.github.freewulkanowy.ui.modules.settings.appearance.menuorder.AppMenuItem
 import io.github.freewulkanowy.utils.AnalyticsHelper
 import io.github.freewulkanowy.utils.AppInfo
@@ -115,15 +114,6 @@ class MainActivity : BaseActivity<MainPresenter, ActivityMainBinding>(), MainVie
         super.onCreate(savedInstanceState)
         setContentView(ActivityMainBinding.inflate(layoutInflater).apply { binding = this }.root)
         setSupportActionBar(binding.mainToolbar)
-
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val hasCompletedOnboarding = prefs.getBoolean("completedOnboarding", false)
-
-        if (!hasCompletedOnboarding) {
-            val onboardingIntent = Intent(this, OnboardingActivity::class.java)
-            startActivity(onboardingIntent)
-            finish()
-        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             WindowCompat.setDecorFitsSystemWindows(window, false)

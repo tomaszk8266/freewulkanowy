@@ -898,12 +898,13 @@
     <string name="message_unmute">Unmute</string>
     <string name="message_mute_success">You have muted this user</string>
     <string name="message_unmute_success">You have unmuted this user</string>
+
     <!-- Onboarding -->
     <string name="onboarding_1_title">Uwaga!</string>
     <string name="onboarding_1_message">Korzystasz właśnie z Wolnej wersji Wulkanowego, NIEOFICJALNEGO klienta dla dziennika elektronicznego firmy Vulcan. Aplikacja jest hobbystycznie tworzona przez uczniów, dla uczniów i rodziców. Nie mamy nic wspólnego z firmą Vulcan. Oficjalną aplikację możesz znaleźć pod nazwą Dzienniczek VULCAN w sklepie Google Play.</string>
-    <string name="onboarding_next_btn">Dalej</string>
+    <string name="onboarding_next_btn">Next</string>
 
     <string name="onboarding_2_message">Witaj w Wolnej wersji Wulkanowego! Aplikacja, którą właśnie pobrałeś/aś jest kontynuacją Wulkanowego, nieoficjalnej apki do dziennika elektronicznego firmy Vulcan. Aplikacja jest tworzona przez uczniów, ma otwarty kod źródłowy - jeżeli znasz się na programowaniu to możesz dodać swoją cegiełkę do rozwoju aplikacji, do czego gorąco zachęcamy! Miłego korzystania z apki!</string>
     <string name="onboarding_2_title">Witaj w Wolnym Wulkanowym!</string>
-    <string name="onboarding_close_btn">Otwórz aplikację</string>
+    <string name="onboarding_back_btn">Back</string>
 </resources>
